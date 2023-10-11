@@ -38,6 +38,7 @@ function App() {
 
   const nhandle = (event) => {
     setArea(event.target.value);
+    console.log('newnwenewwew')
     console.log("textInput", area);
   };
 
