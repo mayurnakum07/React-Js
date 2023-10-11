@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import App2 from "./E-commerce site 1/App2";
 
 // const title = Response.potentiallyMaliciousInput;
 
@@ -10,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<h1 className="myclass">Hello !{title} </h1>);
 root.render(
   <React.StrictMode>
-    <App />
+    <App2 />
   </React.StrictMode>
 );
 
