@@ -38,7 +38,7 @@ function App() {
 
   const nhandle = (event) => {
     setArea(event.target.value);
-    console.log('newnwenewwew')
+    console.log("nHandle");
     console.log("textInput", area);
   };
 
@@ -50,7 +50,7 @@ function App() {
     <div className="App">
       <Container className="mt-5">
         <BrowserRouter>
-      <Header />
+          <Header />
           <Routes>
             <Route>
               <Route path="/" element={<Extra />} />
