@@ -1,9 +1,16 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 
 function Child() {
   const [Color, setColor] = useState("");
+  const [Count, setCount] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((e) => e + 1);
+    }, 1000);
+  });
   const colors = [
     "#FF6633",
     "#FFB399",
@@ -83,6 +90,9 @@ function Child() {
       <Button className="m-3" onClick={randomGenerate}>
         Random Color
       </Button>
+      <br />
+      <br />
+      <h3>This page in you Rendered {Count} Times.</h3>
     </div>
   );
 }

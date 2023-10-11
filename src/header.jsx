@@ -12,7 +12,10 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto     ">
               <Nav.Link>
-                <Link to="/"> Extra </Link>
+                <Link to="/"> Home </Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/Extra"> Extra </Link>
               </Nav.Link>
               <Nav.Link>
                 <Link to="/child"> child </Link>
