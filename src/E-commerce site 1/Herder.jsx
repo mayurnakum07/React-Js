@@ -21,8 +21,8 @@ function Herder() {
               navbarScroll
             >
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
+              <Nav.Link href="#features">Products</Nav.Link>
+              <Nav.Link href="#pricing">About</Nav.Link>
             </Nav>
             <div className="cart-icon">
               <p style={{}}>0</p>

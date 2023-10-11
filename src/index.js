@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<h1 className="myclass">Hello !{title} </h1>);
 root.render(
   <React.StrictMode>
-    <App2 />
+    <App />
   </React.StrictMode>
 );
 

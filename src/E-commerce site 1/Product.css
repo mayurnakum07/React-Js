@@ -1,0 +1,17 @@
+/* .card-all {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+} */
+
+.pro-card {
+  padding: 10px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.pro-card img {
+  width: 18rem;
+  height: auto;
+  object-fit: cover;
+}
