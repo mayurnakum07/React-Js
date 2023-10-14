@@ -21,7 +21,7 @@ function Extra() {
     console.log("Decrement");
     Count > 0 ? setCount((c) => c - 1 * 2) : alert("Decrement below 0");
   };
-
+  
   return (
     <div>
       <h1>This is Extra </h1>
