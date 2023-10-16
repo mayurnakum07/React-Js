@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import App2 from "./E-commerce site 1/App2";
+import App3 from "./Home/App3";
 
 // const title = Response.potentiallyMaliciousInput;
 
@@ -11,11 +12,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<h1 className="myclass">Hello !{title} </h1>);
 root.render(
   <React.StrictMode>
-    <App />
+    <App3 />
   </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
+// to log res ults (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
