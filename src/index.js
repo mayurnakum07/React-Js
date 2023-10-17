@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
+import App from './plugin/App'
 import reportWebVitals from "./reportWebVitals";
 import App2 from "./E-commerce site 1/App2";
 import App3 from "./Home/App3";
@@ -12,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<h1 className="myclass">Hello !{title} </h1>);
 root.render(
   <React.StrictMode>
-    <App3 />
+    <App />
   </React.StrictMode>
 );
 

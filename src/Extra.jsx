@@ -33,9 +33,7 @@ function Extra() {
         Derement
       </Button>
       <br />
-      {/* {UserList.map((user) => (
-        <h4 key={user.id}>{user.id}</h4>
-      ))} */}
+   
       {UserList.map((user) => (
         <h5 key={user.id}>{user.firstName}</h5>
       ))}
