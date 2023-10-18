@@ -1,16 +1,11 @@
-import React, { useCallback, useContext, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import { createContext } from "react";
-import Context from "./context";
-
 const ThemeContext = createContext();
 export default function App() {
   const [theme, setTheme] = useState("light");
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = useCallback(() => {
-    setTodos((t) => [...t, "New Todos"]);
-  }, [todos]);
-  console.log(theme);
+  useEffect(() => {
+    console.log("Theme", theme);
+  });
   return (
     <div>
       <ThemeContext.Provider value={theme}>
@@ -26,7 +21,6 @@ export default function App() {
       <br /> <br />
       <Counter />
       <br /> <br />
-      <Context todos={todos} addTodo={addTodo} />
     </div>
   );
 }
@@ -62,8 +56,6 @@ const Obj = { name: "Jorn Doe", age: 21 };
 
 function Counter() {
   const [state, dispatch] = useReducer(reducer, Obj);
-  console.log("Age", state.age);
-  console.log("name", state.name);
 
   const handleName = (e) => {
     dispatch({
@@ -77,6 +69,12 @@ function Counter() {
       type: "increment_age",
     });
   };
+  useEffect(() => {
+    return () => {
+      console.log("Age", state.age);
+      console.log("name", state.name);
+    };
+  }, []);
 
   return (
     <>

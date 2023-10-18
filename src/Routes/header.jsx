@@ -15,13 +15,13 @@ function Header() {
                 <Link to="/"> Home </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/Extra"> Extra </Link>
+                <Link to="/Api"> APIS </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/child"> child </Link>
+                <Link to="/color"> Colors </Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/grand"> grand </Link>
+                <Link to="/todos"> Todos </Link>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -12,22 +12,9 @@ const initialTodos = [
 ];
 console.log(initialTodos);
 
-const cteateInitialTools = () => {
-  const initialValue = [];
-  for (let i = 0; i < 50; i++) {
-    initialValue.push({
-      id: i,
-      text: "Item " + (i + 1),
-    });
-  }
-  return initialValue;
-};
-
 function Gardchild() {
   const [todos, setTodos] = useState(initialTodos);
-  const [tools, setTools] = useState(cteateInitialTools);
-  console.log('tools',tools);
-  const [text, setText] = useState("");
+
   // console.log("Todos", todos);
   const handleAddTodo = (title) => {
     setTodos([
@@ -64,27 +51,6 @@ function Gardchild() {
         onDeleteTodo={handleDeleteTodos}
       />{" "}
       <br /> <br />
-      <input value={text} onChange={(e) => setText(e.target.value)} />
-      <Button
-        className="m-3"
-        onClick={() => {
-          setText("");
-          setTools([
-            {
-              id: todos.length,
-              text: text,
-            },
-            ...tools,
-          ]);
-        }}
-      >
-        Add
-      </Button>
-      <ul>
-        {todos.map((item) => (
-          <li key={item.id}>{item.text}</li>
-        ))}
-      </ul>
     </>
   );
 }

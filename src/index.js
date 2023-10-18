@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
-import App from './plugin/App'
 import reportWebVitals from "./reportWebVitals";
-import App2 from "./E-commerce site 1/App2";
-import App3 from "./Home/App3";
+// import App from "./Routes/App";
+import App from './Func/App'
+// import App from "./Site/App";
+// import App from "./Components/App";
 
 // const title = Response.potentiallyMaliciousInput;
 

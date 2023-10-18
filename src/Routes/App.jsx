@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Extra from "./Extra";
-import Child from "./Child";
-import Gardchild from "./Gardchild";
+import Extra from "./Api";
+import Child from "./Colors";
+import Gardchild from "./Todos";
 import { Button, Container } from "react-bootstrap";
 import Include from "./Include";
 function App() {
@@ -78,9 +78,9 @@ function App() {
           <Routes>
             <Route>
               <Route path="/" element={<Include />} />
-              <Route path="Extra" element={<Extra />} />
+              <Route path="API" element={<Extra />} />
               <Route
-                path="child"
+                path="color"
                 element={
                   <Child
                     color={Color}
@@ -89,7 +89,7 @@ function App() {
                   />
                 }
               />
-              <Route path="grand" element={<Gardchild />} />
+              <Route path="todos" element={<Gardchild />} />
             </Route>
           </Routes>
         </BrowserRouter>
