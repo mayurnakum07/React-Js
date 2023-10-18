@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-// import App from "./Routes/App";
-import App from './Func/App'
-// import App from "./Site/App";
+
 // import App from "./Components/App";
+import App from "./Example/App";
+// import App from './Func/App'
+// import App from "./Routes/App";
+// import App from "./Site/App";
 
 // const title = Response.potentiallyMaliciousInput;
 

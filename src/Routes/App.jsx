@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "../App.css";
 import Header from "./header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Extra from "./Api";
@@ -76,21 +76,19 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route>
-              <Route path="/" element={<Include />} />
-              <Route path="API" element={<Extra />} />
-              <Route
-                path="color"
-                element={
-                  <Child
-                    color={Color}
-                    setColor={setColor}
-                    generate={randomGenerate}
-                  />
-                }
-              />
-              <Route path="todos" element={<Gardchild />} />
-            </Route>
+            <Route path="/" element={<Include />} />
+            <Route path="API" element={<Extra />} />
+            <Route
+              path="color"
+              element={
+                <Child
+                  color={Color}
+                  setColor={setColor}
+                  generate={randomGenerate}
+                />
+              }
+            />
+            <Route path="todos" element={<Gardchild />} />
           </Routes>
         </BrowserRouter>
       </Container>
