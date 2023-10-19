@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../App.css";
 import { Button } from "react-bootstrap";
+import { useDarkMode } from "./Usecontext";
 
 function Usestate() {
   const [input, setInput] = useState([]);
@@ -10,6 +11,9 @@ function Usestate() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [isSubmitting, setisSubmitting] = useState(false);
+
+  const { isDarkMode } = useDarkMode();
+
   const addItem = (event) => {
     event.preventDefault();
     if (!text.trim()) {
@@ -28,7 +32,7 @@ function Usestate() {
   };
 
   const increment = () => {
-    count == input.length
+    count >= input.length
       ? alert(
           "Your Above Todo list when length of todo when only when increment number."
         )
@@ -46,8 +50,12 @@ function Usestate() {
       alert("Your Data is Submitted");
     }, 1000);
     console.log({ name, email, pass });
-    };
-    
+  };
+
+  const handleDelete = () => {
+    setInput([]);
+    setCount(0);
+  };
 
   return (
     <div>
@@ -55,10 +63,10 @@ function Usestate() {
         <h1>UseState</h1>
         <hr className="mb-4" />
         <div
-          className="container col-md-8"
+          className={` container col-md-8 ${
+            isDarkMode ? "container1" : "container2"
+          }`}
           style={{
-            backgroundColor: "#282c34",
-            color: "white",
             padding: "40px 60px",
           }}
         >
@@ -73,7 +81,7 @@ function Usestate() {
             />
             <div className="d-flex justify-content-end mt-2 gap-3">
               <h4>{input.length} Todos</h4>
-              <Button>Reset Todos</Button>
+              <Button onClick={handleDelete}>Reset Todos</Button>
             </div>
             <br />
             {input.map((item) => (
@@ -84,10 +92,10 @@ function Usestate() {
         <br />
         <br />
         <div
-          className="container col-md-8 mt-5"
+          className={` container col-md-8 ${
+            isDarkMode ? "container1" : "container2"
+          }`}
           style={{
-            backgroundColor: "#282c34",
-            color: "white",
             padding: "40px 60px",
           }}
         >
@@ -103,10 +111,10 @@ function Usestate() {
         <br />
         <br />
         <div
-          className="container col-md-8 mt-5"
+          className={` container col-md-8 ${
+            isDarkMode ? "container1" : "container2"
+          }`}
           style={{
-            backgroundColor: "#282c34",
-            color: "white",
             padding: "40px 60px",
           }}
         >

@@ -1,10 +1,16 @@
 import axios from "axios";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useDarkMode } from "./Usecontext";
 
 function UseEffect() {
   const [timer, setTimer] = useState("");
-  const [data, setData] = useState([]);
+  const [users, setUsers] = useState([]);
+  const { isDarkMode } = useDarkMode();
+  // useEffect(() => {
+  //   console.log(data.users);
+  // }, [data]);
 
   useEffect(() => {
     setInterval(() => {
@@ -14,10 +20,13 @@ function UseEffect() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      setData(response.data);
+      try {
+        const response = await axios.get("https://dummyjson.com/users");
+        console.log("Response", response);
+        setUsers(response.data.users);
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchData();
   }, []);
@@ -28,10 +37,10 @@ function UseEffect() {
         <h1>UseEffect</h1>
         <hr className="mb-4" />
         <div
-          className="container col-md-8"
+          className={` container col-md-8 ${
+            isDarkMode ? "container1" : "container2"
+          }`}
           style={{
-            backgroundColor: "#282c34",
-            color: "white",
             padding: "40px 60px",
           }}
         >
@@ -41,41 +50,45 @@ function UseEffect() {
         <br />
         <br />
         <div
-          className="container col-md-8 mt-5"
+          className={` container col-md-8 ${
+            isDarkMode ? "container1" : "container2"
+          }`}
           style={{
-            backgroundColor: "#282c34",
-            color: "white",
             padding: "40px 60px",
           }}
         >
           <h3>Calling API</h3>
-
-          {/* <ul>
-            {data.map((item) => (
-              <li key={item.id}>{item.name}</li>
-            ))}
-          </ul> */}
-          {
-            <div className="group mt-3 m-2 row row-cols-2">
-              {data.map((item) => (
-                <div className="card" key={item.id}>
-                  <div className="card-body">
-                    <h5 className="card-title">{item.username}</h5>
-                    <p className="card-text">
-                      Name :- {item.name} <br />
-                      Email : - {item.email} <br />
-                      Phone :- {item.phone} <br />
-                      Web :- {item.website}
-                    </p>
-                    <a href="#" className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </div>
+          <div className="group mt-3  m-2 row row-cols-2">
+            {users?.map((item) => (
+              <div
+                className={` card  ${isDarkMode ? "container2" : "container1"}`}
+                key={item.id}
+              >
+                <img src={item.image} className="card-img-top" alt="..." />
+                <div className="card-body">
+                  <h5 className="card-title">{item.username}</h5>
+                  <p className="card-text">
+                    Name :- {item.firstName} {item.maidenName} {item.lastName}{" "}
+                    <br />
+                    Email :- {item.email} <br />
+                    Phone:-{item.phone}
+                  </p>
+                  <button className="btn btn-primary">
+                    {" "}
+                    <Link
+                      to="/details"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      {" "}
+                      More Details...{" "}
+                    </Link>
+                  </button>
                 </div>
-              ))}
-            </div>
-          }
+              </div>
+            ))}
+          </div>
         </div>
+        <br /> <br />
       </div>
     </div>
   );

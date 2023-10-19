@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 
 // import App from "./Components/App";
 import App from "./Example/App";
+import { Usecontext } from "./Example/Usecontext";
 // import App from './Func/App'
 // import App from "./Routes/App";
 // import App from "./Site/App";
@@ -15,7 +16,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<h1 className="myclass">Hello !{title} </h1>);
 root.render(
   <React.StrictMode>
-    <App />
+    <Usecontext>
+      <App />
+    </Usecontext>
   </React.StrictMode>
 );
 
