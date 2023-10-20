@@ -7,6 +7,7 @@ import UseEffect from "./UseEffect";
 import Detail from "./Detail";
 import { useDarkMode } from "./Usecontext";
 import Usereducer from "./Usereducer";
+import Useref from "./Useref";
 export default function App() {
   const { isDarkMode } = useDarkMode();
 
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/useeffect" element={<UseEffect />} />
           <Route path="/details" element={<Detail />} />
           <Route path="/usecontext" element={<Usereducer />} />
+          <Route path="/useref" element={<Useref />} />
         </Routes>
       </BrowserRouter>
       {/* </Usecontext> */}

@@ -43,7 +43,7 @@ function Usereducer() {
             isDarkMode ? "container1" : "container2"
           }`}
           style={{
-            padding: "40px 60px",
+            padding: "40px 60px", 
           }}
         >
           <h3>Count and Clear</h3>

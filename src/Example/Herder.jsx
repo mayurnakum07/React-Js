@@ -41,6 +41,10 @@ function Herder() {
                 {" "}
                 <Link to="/usecontext"> UseReducer </Link>
               </Nav.Link>
+              <Nav.Link>
+                {" "}
+                <Link to="/useref"> UseRef </Link>
+              </Nav.Link>
             </Nav>
             <div
               className="cart-icon form-check-reverse form-switch"
